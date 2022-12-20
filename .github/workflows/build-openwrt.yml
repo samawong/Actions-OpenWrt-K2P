@@ -10,7 +10,12 @@
 
 name: Build OpenWrt
 on:
-  public
+   release:
+    types: [published]
+   workflow_dispatch:
+    inputs:
+      logs:
+        description: 'You can input logs here'  
   
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
